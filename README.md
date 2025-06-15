@@ -1,71 +1,80 @@
-# 🧮 Fibonacci Sequence with Process Management (EEX5335 Lab 01)
+# 🧮 Fibonacci Process Lab (EEX5335) — Live Demo & Report
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform: WSL2 + Ubuntu](https://img.shields.io/badge/Platform-WSL2--Ubuntu-blue)](https://ubuntu.com/wsl)
+[![Language: C](https://img.shields.io/badge/Language-C-blue)](https://gcc.gnu.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Welcome! This repository contains my solution for the EEX5335 Operating Systems Lab 01: **Fibonacci Sequence Generation using Process Management in C**.  
-As a 3rd-year Computer Engineering undergraduate, this project demonstrates practical use of `fork()` and `wait()` system calls, process IDs, and memory isolation in Linux.
-
----
-
-## 🚀 Project Overview
-
-- **Purpose:**  
-  To understand and demonstrate how parent and child processes work, how process IDs are managed, and how memory is separated in a Linux environment using C.
-- **What it does:**  
-  - Prompts the user for the number of Fibonacci terms (1–50).
-  - Uses `fork()` to create a child process.
-  - The child process computes and prints the Fibonacci sequence with its PID.
-  - The parent waits for the child to finish, then prints its own PID.
-  - Handles invalid input and process creation errors.
+This repository contains my implementation for the **EEX5335 Operating Systems Lab 01**. Here, I demonstrate inter-process communication in Linux by generating the Fibonacci sequence in a child process using `fork()` and `wait()`, with real-time error handling and process management.
 
 ---
 
-## 📂 Repository Structure
+## 🚀 Live Action / Demo
 
-```plaintext
-.
-├── fibonacci_fork.c      # Main source code
-├── README.md             # This file
-├── LICENSE               # License file (MIT)
+### 🏁 Step 1: Install WSL2 and Ubuntu
+
+#### Enable Required Windows Features
+
+1. **Open Start Menu** → Search for **"Windows Features"** → Open **Turn Windows Features on or off**.
+2. Enable:
+   - ✅ **Windows Subsystem for Linux**
+   - ✅ **Virtual Machine Platform**
+3. Click **OK** and **Restart** your computer.
+
+#### Install WSL and Ubuntu
+
+- Open **Windows PowerShell** and run:
+  ```sh
+  wsl --install
+  ```
+  This command installs WSL2 and sets Ubuntu as the default Linux distribution.
+
+#### Create a Linux User
+
+- After installation, a terminal window will prompt you to:
+  - Enter a **username**
+  - Set a **password**
+
+#### Launch Ubuntu Terminal
+
+- Open the Ubuntu terminal from the Start Menu.  
+  (You should see a dedicated Ubuntu terminal with a maroon interface.)
+
+---
+
+### 🔧 Step 2: Initial Setup in Ubuntu
+
+#### Update Package Lists
+
+```sh
+sudo apt update && sudo apt upgrade
+```
+
+#### Install Required Tools
+
+```sh
+sudo apt install build-essential gcc
 ```
 
 ---
 
-## 🛠️ Environment & Tools
-
-- **Laptop OS:** Windows 10 (64-bit)
-- **Linux:** Ubuntu 24.04.2 LTS via [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/)
-- **Compiler:** GCC 13.4
-- **Editor:** Visual Studio Code
-- **Terminal:** Ubuntu Terminal in WSL 2
-- **Version Control:** Git & GitHub
-
----
-
-## 🔗 GitHub Repository
-
-> **Find all code and lab documentation here:**  
-> [github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process](https://github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process)
-
----
-
-## 🏁 Quick Start
-
-### 1. Clone the Repository
+### 👨‍💻 Step 3: Clone This Repository
 
 ```sh
 git clone https://github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process.git
 cd EEX5335-Lab01-Fibonacci-Process
 ```
 
-### 2. Compile the Program
+---
+
+### ⚙️ Step 4: Compile the C Program
 
 ```sh
 gcc fibonacci_fork.c -o fibonacci_fork
 ```
 
-### 3. Run the Program
+---
+
+### ▶️ Step 5: Run the Program
 
 ```sh
 ./fibonacci_fork
@@ -73,27 +82,36 @@ gcc fibonacci_fork.c -o fibonacci_fork
 
 ---
 
-## 📋 Example Usage
+### 🎥 Example Live Session
 
 ```plaintext
-Enter the number of Fibonacci terms: 7
+Enter the number of Fibonacci terms: 8
 
-[Child Process] PID: 2311
-Fibonacci Sequence: 0 1 1 2 3 5 8 
+[Child Process] PID: 3456
+Fibonacci Sequence: 0 1 1 2 3 5 8 13 
 [Child Process] Computation complete. Exiting...
 
-[Parent Process] PID: 2310
+[Parent Process] PID: 3455
 Child process has completed execution.
 ```
 
-- **If you enter a number outside 1–50:**
-  ```
-  Please enter a number between 1 and 50.
-  ```
+**Invalid Input Example:**
+```
+Enter the number of Fibonacci terms: 0
+Please enter a number between 1 and 50.
+```
 
 ---
 
-## 🧑‍💻 Code Summary
+## 📝 About the Code
+
+- Prompts user for a number (1–50) for Fibonacci terms.
+- Uses `fork()` to spawn a child process.
+- Child process calculates and prints the Fibonacci sequence (and its PID).
+- Parent waits for the child (`wait()`), then prints its own PID.
+- Handles invalid input and fork failures gracefully.
+
+### Main Source
 
 ```c
 #include <stdio.h>
@@ -152,18 +170,28 @@ int main() {
 
 ---
 
-## 💡 Learning Outcomes
+## 💻 Tools & Environment
 
-- **Process creation & synchronization** with `fork()` and `wait()`
-- **Parent/child memory separation** and unique process IDs
-- **Robust input validation** and error handling
-- **Linux development workflow** using VS Code, WSL 2, and GitHub
+- **OS:** Windows 10 (64-bit)
+- **Linux:** Ubuntu 24.04.2 LTS via WSL2
+- **Compiler:** GCC 13.4
+- **Editor:** Visual Studio Code
+- **Terminal:** Ubuntu Terminal in WSL2
 
 ---
 
-## 📷 Screenshots
+## 🧑‍🎓 What I Learned
 
-> _(Insert terminal screenshots here for demonstration if submitting for course assessment)_
+- Creating and synchronizing processes using `fork()` & `wait()`
+- Understanding parent/child memory separation and PIDs
+- Robust error handling in system programming
+- Efficient workflow using VS Code, WSL2, and GitHub
+
+---
+
+## 🔗 GitHub Repository
+
+[github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process](https://github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process)
 
 ---
 
@@ -176,16 +204,14 @@ int main() {
 
 ---
 
-## 🙋‍♂️ Author
+## 📝 License
 
-**Wanni46**  
-3rd Year Undergraduate, Computer Engineering  
-[GitHub Profile](https://github.com/Wanni46)
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 📝 License
+## 📷 Screenshots
 
-This project is licensed under the [MIT License](LICENSE).
+> _Add your own live terminal screenshots here for full marks!_
 
 ---
