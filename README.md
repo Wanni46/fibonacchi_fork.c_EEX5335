@@ -46,15 +46,17 @@ This repository contains my implementation for the **EEX5335 Operating Systems L
 #### Update Package Lists
 
 ```sh
-sudo apt update && sudo apt upgrade
+sudo apt update
 ```
 
 #### Install Required Tools
 
 ```sh
-sudo apt install build-essential gcc
+sudo apt install build-essential
 ```
-
+```sh
+sudo apt install gcc
+```
 ---
 
 ### 👨‍💻 Step 3: Clone This Repository
