@@ -3,6 +3,7 @@
 [![Platform: WSL2 + Ubuntu](https://img.shields.io/badge/Platform-WSL2--Ubuntu-blue)](https://ubuntu.com/wsl)
 [![Language: C](https://img.shields.io/badge/Language-C-blue)](https://gcc.gnu.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Last Updated: 2025-06-15](https://img.shields.io/badge/Last%20Updated-2025--06--15-brightgreen)](https://github.com/Wanni46)
 
 This repository contains my implementation for the **EEX5335 Operating Systems Lab 01**. Here, I demonstrate inter-process communication in Linux by generating the Fibonacci sequence in a child process using `fork()` and `wait()`, with real-time error handling and process management.
 
@@ -11,6 +12,9 @@ This repository contains my implementation for the **EEX5335 Operating Systems L
 ## 🚀 Live Action / Demo
 
 ### 🏁 Step 1: Install WSL2 and Ubuntu
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse installation steps</b></summary>
 
 #### Enable Required Windows Features
 
@@ -39,9 +43,14 @@ This repository contains my implementation for the **EEX5335 Operating Systems L
 - Open the Ubuntu terminal from the Start Menu.  
   (You should see a dedicated Ubuntu terminal with a maroon interface.)
 
+</details>
+
 ---
 
 ### 🔧 Step 2: Initial Setup in Ubuntu
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse setup steps</b></summary>
 
 #### Update Package Lists
 
@@ -57,34 +66,55 @@ sudo apt install build-essential
 ```sh
 sudo apt install gcc
 ```
+
+</details>
+
 ---
 
 ### 👨‍💻 Step 3: Clone This Repository
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse git steps</b></summary>
 
 ```sh
 git clone https://github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process.git
 cd EEX5335-Lab01-Fibonacci-Process
 ```
 
+</details>
+
 ---
 
 ### ⚙️ Step 4: Compile the C Program
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse compile steps</b></summary>
 
 ```sh
 gcc fibonacci_fork.c -o fibonacci_fork
 ```
 
+</details>
+
 ---
 
 ### ▶️ Step 5: Run the Program
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse run steps</b></summary>
 
 ```sh
 ./fibonacci_fork
 ```
 
+</details>
+
 ---
 
 ### 🎥 Example Live Session
+
+<details open>
+<summary><b>🖱️ Click to see example terminal output</b></summary>
 
 ```plaintext
 Enter the number of Fibonacci terms: 8
@@ -103,9 +133,14 @@ Enter the number of Fibonacci terms: 0
 Please enter a number between 1 and 50.
 ```
 
+</details>
+
 ---
 
 ## 📝 About the Code
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse code explanation</b></summary>
 
 - Prompts user for a number (1–50) for Fibonacci terms.
 - Uses `fork()` to spawn a child process.
@@ -170,9 +205,14 @@ int main() {
 }
 ```
 
+</details>
+
 ---
 
 ## 💻 Tools & Environment
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse environment details</b></summary>
 
 - **OS:** Windows 10 (64-bit)
 - **Linux:** Ubuntu 24.04.2 LTS via WSL2
@@ -180,40 +220,61 @@ int main() {
 - **Editor:** Visual Studio Code
 - **Terminal:** Ubuntu Terminal in WSL2
 
+</details>
+
 ---
 
 ## 🧑‍🎓 What I Learned
+
+<details open>
+<summary><b>🖱️ Click to expand/collapse learning outcomes</b></summary>
 
 - Creating and synchronizing processes using `fork()` & `wait()`
 - Understanding parent/child memory separation and PIDs
 - Robust error handling in system programming
 - Efficient workflow using VS Code, WSL2, and GitHub
 
+</details>
+
 ---
 
 ## 🔗 GitHub Repository
 
+<details open>
+<summary><b>🖱️ Click to expand/collapse repository link</b></summary>
+
 [github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process](https://github.com/Wanni46/EEX5335-Lab01-Fibonacci-Process)
+
+</details>
 
 ---
 
 ## 📚 References
 
+<details open>
+<summary><b>🖱️ Click to expand/collapse references</b></summary>
+
 [1] A. Silberschatz, P. B. Galvin, and G. Gagne, _Operating System Concepts_, 8th ed. Hoboken, NJ, USA: Wiley, 2008.  
-[2] “fork(2) - Linux manual page,” [Online]. Available: https://man7.org/linux/man-pages/man2/fork.2.html. [Accessed: 15-Jun-2025].  
-[3] “wait(2) - Linux manual page,” [Online]. Available: https://man7.org/linux/man-pages/man2/wait.2.html. [Accessed: 15-Jun-2025].  
-[4] “task_struct — Core kernel documentation,” [Online]. Available: https://www.kernel.org/doc/html/latest/core-api/task_struct.html. [Accessed: 15-Jun-2025].  
+[2] "fork(2) - Linux manual page," [Online]. Available: https://man7.org/linux/man-pages/man2/fork.2.html. [Accessed: 15-Jun-2025].  
+[3] "wait(2) - Linux manual page," [Online]. Available: https://man7.org/linux/man-pages/man2/wait.2.html. [Accessed: 15-Jun-2025].  
+[4] "task_struct — Core kernel documentation," [Online]. Available: https://www.kernel.org/doc/html/latest/core-api/task_struct.html. [Accessed: 15-Jun-2025].  
+
+</details>
 
 ---
 
 ## 📝 License
 
+<details open>
+<summary><b>🖱️ Click to expand/collapse license details</b></summary>
+
 MIT License - see [LICENSE](LICENSE) for details.
 
----
-
-## 📷 Screenshots
-
-> _Add your own live terminal screenshots here for full marks!_
+</details>
 
 ---
+
+<div align="center">
+<b>🔄 Last Updated:</b> 2025-06-15 17:20:56 (UTC)<br>
+<b>👤 Author:</b> Wanni46
+</div>
